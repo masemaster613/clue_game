@@ -1,0 +1,18 @@
+{%extends "game.html"%}
+{%block content%}
+<div class="container-fluid">
+<div class='alert alert-primary'> A guess has been made: {{clue.guess[:]}}</div>
+<form method='POST' action=''>
+	{{form.hidden_tag()}}
+	<fieldset>
+		<legend>What do you reveal</legend>
+		<div>
+			{{form.reveal}}
+		</div>
+	</fieldset>
+	<div>
+		{{form.submit(class="btn btn-outline-info")}}
+	</div>
+</form>
+</div>
+{%endblock%}

@@ -1,0 +1,29 @@
+{%extends "game.html"%}
+{%block content%}
+<div id='turn' class='container'>
+	<div class='alert alert-primary'> It's your turn</div>
+	{%if current_user.is_guesser%}
+	<form method='POST' action=''>
+		{{form.hidden_tag()}}
+		<fieldset class='form-group'>
+			<legend>Make a Guess</legend>
+			<div >
+				{{form.person.label(class='form-control-label')}}
+				{{form.person}}
+			</div>
+			<div>
+				{{form.weapon.label(class='form-control-label')}}
+				{{form.weapon}}
+			</div>
+			<div>
+				{{form.room.label(class='form-control-label')}}
+				{{form.room}}
+			</div>
+		</fieldset>
+		<div >
+			{{form.submit(class="btn btn-outline-info")}}
+		</div>
+	</form>
+	{%endif%}	
+</div>
+{%endblock%}
